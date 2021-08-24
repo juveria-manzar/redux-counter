@@ -1,7 +1,9 @@
 let App = () => {
   return (
-    <div>
-    </div>
+    <>
+    <button>+</button>
+    <p>0</p>
+    </>
   );
 }
 
