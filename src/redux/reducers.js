@@ -1,4 +1,6 @@
-let reducer = (state = 0, reducer) => {
+//function that actually modifies the state
+
+let reducer = (state = 0, action) => {
     switch (action.type) {
         case "INCREMENT":
             return state+1;
