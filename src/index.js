@@ -2,14 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-import { createStore } from "redux";
+import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
-import reducer from './redux/reducers';
+import counterReducer from './redux/counterReducer';
+
+import loginReducer from './redux/loginReducer';
 
 //creating a store 
 //that takes in reducer as a parameter
 //basically store-> states+reducers
-let myStore = createStore(reducer)
+
+let rootReducer = combineReducers({
+  count: counterReducer,
+  logged: loginReducer
+})
+let myStore = createStore(rootReducer)
 
 ReactDOM.render(
   //wraping the APP component with the store
